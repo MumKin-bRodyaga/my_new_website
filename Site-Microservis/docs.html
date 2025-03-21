@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Микросервисы - Документация</title>
+  <meta name="description" content="Здесь вы найдете руководства, API и примеры использования микросервисов. Узнайте больше о документации по микросервисам.">
+  <meta name="keywords" content="микросервисы, документация, API, руководства, примеры">
+  <meta name="author" content="Ваше имя или компания">
+  <link rel="icon" href="img/icon.PNG" type="image/x-icon">
+  <link rel="stylesheet" href="css/turretcss.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Шапка -->
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">Микросервисы</a>
+        <ul class="navbar-nav">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="services.html">Услуги</a></li>
+          <li><a href="docs.html" class="active">Документация</a></li>
+          <li><a href="repo.html">Репозиторий</a></li>
+          <li><a href="contact.html">Контакты</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Основной контент -->
+  <main class="container">
+    <div class="row">
+      <!-- Сайдбар -->
+      <aside class="col-3">
+        <h3>Навигация</h3>
+        <ul>
+          <li><a href="#section1">Руководства</a></li>
+          <li><a href="#section2">API</a></li>
+          <li><a href="#section3">Примеры</a></li>
+        </ul>
+      </aside>
+
+      <!-- Контент -->
+      <section class="col-9">
+        <h1>Документация по микросервисам</h1>
+        <p>Здесь вы найдете руководства, API и примеры использования микросервисов.</p>
+        <img src="img/docs.jpg" alt="Документация" class="img-fluid">
+      
+        <h2 id="section1">Руководства</h2>
+        <p>Подробные руководства по внедрению и использованию микросервисов.</p>
+      
+        <h2 id="section2">API</h2>
+        <p>Документация по API для взаимодействия с микросервисами.</p>
+      
+        <h2 id="section3">Примеры</h2>
+        <p>Примеры кода и интеграции микросервисов.</p>
+      </section>
+    </div>
+  </main>
+
+  <!-- Подвал -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Микросервисы. Все права защищены.</p>
+      <ul class="footer-nav">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="privacy.html">Политика конфиденциальности</a></li>
+      </ul>
+      <div class="social-links">
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://github.com" target="_blank">GitHub</a>
+      </div>
+      <form class="newsletter-form">
+        <label for="email">Подпишитесь на нашу рассылку:</label>
+        <input type="email" id="email" name="email" placeholder="Ваш email" required>
+        <button type="submit">Подписаться</button>
+      </form>
+    </div>
+  </footer>
+
+  <!-- Кнопка "Наверх" -->
+  <button id="scrollToTop" title="Наверх">↑</button>
+
+  <!-- Скрипт для анимации и кнопки "Наверх" -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const sections = document.querySelectorAll("section");
+      sections.forEach(section => {
+        section.classList.add("visible");
+      });
+
+      document.addEventListener("scroll", function() {
+        const scrollToTopButton = document.getElementById("scrollToTop");
+        if (window.scrollY > 300) {
+          scrollToTopButton.style.display = "block";
+        } else {
+          scrollToTopButton.style.display = "none";
+        }
+      });
+
+      document.getElementById("scrollToTop").addEventListener("click", function() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+  </script>
+</body>
+</html>
