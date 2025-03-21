@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Микросервисы - Главная</title>
+  <meta name="description" content="Микросервисы — это современный подход к разработке программного обеспечения. Узнайте больше о преимуществах и использовании микросервисов.">
+  <meta name="keywords" content="микросервисы, архитектура, разработка, преимущества микросервисов">
+  <meta name="author" content="Ваше имя или компания">
+  <link rel="icon" href="img/icon.PNG" type="image/x-icon">
+  <link rel="stylesheet" href="css/turretcss.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Шапка -->
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">Микросервисы</a>
+        <ul class="navbar-nav">
+          <li><a href="index.html" class="active">Главная</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="services.html">Услуги</a></li>
+          <li><a href="docs.html">Документация</a></li>
+          <li><a href="repo.html">Репозиторий</a></li>
+          <li><a href="contact.html">Контакты</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Основной контент -->
+  <main class="container">
+    <div class="row">
+      <!-- Сайдбар -->
+      <aside class="col-3">
+        <h3>Навигация</h3>
+        <ul>
+          <li><a href="#section1">Что такое микросервисы?</a></li>
+          <li><a href="#section2">Преимущества</a></li>
+          <li><a href="#section3">Примеры</a></li>
+        </ul>
+      </aside>
+
+      <!-- Контент -->
+      <section class="col-9">
+        <h1>Микросервисы: Современная архитектура для вашего бизнеса</h1>
+        <p>Микросервисы — это подход к разработке программного обеспечения, при котором приложение состоит из небольших, независимых сервисов, каждый из которых выполняет одну конкретную функцию.</p>
+        <img src="img/microservis.PNG" alt="Микросервисы" class="img-fluid">
+      
+        <h2 id="section1">Что такое микросервисы?</h2>
+        <p>Микросервисы — это архитектурный стиль, который позволяет разбивать приложение на небольшие, независимые компоненты, каждый из которых работает как отдельный сервис. Это упрощает разработку, тестирование и масштабирование.</p>
+      
+        <h2 id="section2">Преимущества микросервисов</h2>
+        <ul>
+          <li>Масштабируемость: Каждый сервис можно масштабировать независимо.</li>
+          <li>Гибкость: Возможность использовать разные технологии для разных сервисов.</li>
+          <li>Устойчивость: Отказ одного сервиса не влияет на работу всей системы.</li>
+        </ul>
+      
+        <h2 id="section3">Видео о микросервисах</h2>
+        <div class="video-container">
+          <iframe
+            width="720"
+            height="405"
+            src="https://rutube.ru/play/embed/5b6338cdf1b3a77758a1a5a73049901d/"
+            frameBorder="0"
+            allow="clipboard-write; autoplay"
+            webkitAllowFullScreen
+            mozallowfullscreen
+            allowFullScreen
+          ></iframe>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Подвал -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Микросервисы. Все права защищены.</p>
+      <ul class="footer-nav">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="privacy.html">Политика конфиденциальности</a></li>
+      </ul>
+      <div class="social-links">
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://github.com" target="_blank">GitHub</a>
+      </div>
+      <form class="newsletter-form">
+        <label for="email">Подпишитесь на нашу рассылку:</label>
+        <input type="email" id="email" name="email" placeholder="Ваш email" required>
+        <button type="submit">Подписаться</button>
+      </form>
+    </div>
+  </footer>
+
+  <!-- Кнопка "Наверх" -->
+  <button id="scrollToTop" title="Наверх">↑</button>
+
+  <!-- Плавающая кнопка "Поддержать разработчиков" -->
+  <button id="supportButton" class="floating-button">Поддержать разработчиков</button>
+
+  <!-- Модальное окно с картинкой -->
+  <div id="supportModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img src="img/support-image.jpg" alt="Поддержка разработчиков" class="modal-image">
+    </div>
+  </div>
+
+  <!-- Скрипт для анимации и кнопки "Наверх" -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const sections = document.querySelectorAll("section");
+      sections.forEach(section => {
+        section.classList.add("visible");
+      });
+
+      // Управление кнопкой "Наверх"
+      document.addEventListener("scroll", function() {
+        const scrollToTopButton = document.getElementById("scrollToTop");
+        if (window.scrollY > 300) {
+          scrollToTopButton.style.display = "block";
+        } else {
+          scrollToTopButton.style.display = "none";
+        }
+      });
+
+      document.getElementById("scrollToTop").addEventListener("click", function() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // Управление модальным окном
+      const supportButton = document.getElementById("supportButton");
+      const modal = document.getElementById("supportModal");
+      const closeButton = document.querySelector(".close");
+
+      supportButton.addEventListener("click", function() {
+        modal.style.display = "block";
+      });
+
+      closeButton.addEventListener("click", function() {
+        modal.style.display = "none";
+      });
+
+      window.addEventListener("click", function(event) {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    });
+  </script>
+
+  <!-- Стили для плавающей кнопки и модального окна -->
+  <style>
+    .floating-button {
+      position: fixed;
+      bottom: 80px; /* Расположение выше кнопки "Наверх" */
+      right: 20px;
+      padding: 10px 20px;
+      background-color: #ffcc00; /* Желтый цвет, как в других элементах */
+      color: #333; /* Темный текст для контраста */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .floating-button:hover {
+      background-color: #e6b800; /* Темнее желтый при наведении */
+      transform: translateY(-2px); /* Легкий эффект поднятия */
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1001;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+      position: relative;
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 10px;
+      text-align: center;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .close {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #333; /* Темный цвет при наведении */
+    }
+
+    .modal-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .floating-button {
+        bottom: 20px; /* Кнопка ближе к низу на мобильных устройствах */
+        right: 10px;
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+
+      .modal-content {
+        margin: 20% auto;
+        width: 90%;
+      }
+    }
+  </style>
+</body>
+</html>
